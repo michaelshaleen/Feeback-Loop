@@ -16,3 +16,14 @@ create component for understanding
   imports proper shit
   export default understanding
   links and routes from feeling to understanding
+
+
+
+  if statement
+if input === null no go
+return route path or 
+return alert error
+
+
+
+

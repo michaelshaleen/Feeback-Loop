@@ -6,18 +6,7 @@ function Comments() {
 const history = useHistory();
   const nextButton = () => {//when clicked to this
     console.log("nextButton")
-    let x = document.getElementById("myInput").value; 
-    if(x === ''){
-      alert("Add Input Value")
-      console.log("missing input")
-    }else{
-      console.log("else statement")
-      history.push('/Feeling')//bring me to page ___
-
-    }
-
-
-
+    history.push('/Review')//bring me to page ___
   }
 
 

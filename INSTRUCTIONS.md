@@ -35,22 +35,16 @@ The parts:
 ![comments](wireframes/comments.png)
 
 While there is no nav bar, each part of the form should be at its own route. Clicking next should move the user to the appropriate step in the process.
+[x]
 
 ### Input Validation
 
 Each step should only allow the user to advance to the next step if a score was provided. Be sure to tell the user in some way that a value must be provided.
-
-if statement
-if input === null no go
-return route path or 
-return alert error
-
-
-
-
+[x]
 
 
 The `Comments` step does not need to be validated, an empty value is okay.
+[x]
 
 ## THE REVIEW COMPONENT
 
