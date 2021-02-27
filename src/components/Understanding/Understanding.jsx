@@ -7,6 +7,7 @@ import {  useDispatch, useSelector } from 'react-redux';
 
 function Understanding() {
   const history = useHistory();//use as a variable to .push
+  const dispatch = useDispatch();
 
   //const = useSelector(store => store.);
 
@@ -30,6 +31,10 @@ function Understanding() {
 
   const handleUnderstanding = (event) => {
     console.log('Understanding', event.target.value);
+    dispatch({
+      type: 'ADD_UNDERSTANDING',
+      payload: FeedbackToAdd
+    })
     setFeedbackToAdd({
       ...FeedbackToAdd,
       understanding: event.target.value,

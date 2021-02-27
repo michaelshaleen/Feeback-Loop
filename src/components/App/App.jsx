@@ -8,18 +8,15 @@ import Support from '../Support/Support';
 import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+
 //import logger from 'redux-logger';
 
 
 function App() {
 
 
-  const feelingReducer = (state = [], action) => {
-    if(action.type === 'ADD_FEELING'){
-      return action.payload
-    }
-    return state;
-  }
+ 
 
 
   // const storeInstance = createStore(
