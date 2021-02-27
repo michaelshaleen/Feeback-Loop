@@ -4,14 +4,21 @@ import Understanding from '../Understanding/Understanding';
 
 function Feeling() {
   const history = useHistory();//use as a variable to .push
+const [input, setInput] = useState();
 
 
-
-  const nextButton = () => {//when clicked to this
-    console.log("nextButton")
-    history.push('/Understanding')//bring me to page ___
-
+  const nextButton = (input) => {//when clicked to this
+    console.log("nextButton");
+    console.log(input);
+    if(input === 1){
+      alert("Add Input Value")
+    }else{
+      console.log("else statement")
+      history.push('/Understanding')//bring me to page ___
+    }
   }
+  //if input is empty we want an alert?
+  //what is !target.value??
 
   return (
     <>
@@ -21,7 +28,8 @@ function Feeling() {
 
     <input
     type="number"
-    />
+    onChange={handleInput}
+        />
 
     <button onClick={nextButton}>Next</button>
 

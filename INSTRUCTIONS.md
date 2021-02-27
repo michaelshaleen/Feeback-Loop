@@ -30,8 +30,6 @@ The parts:
 - How well are you understanding the content?
 ![understanding](wireframes/understanding.png)
 - How well are you being supported?
-
-
 ![support](wireframes/supported.png)
 - Any comments you want to leave?
 ![comments](wireframes/comments.png)
@@ -41,6 +39,16 @@ While there is no nav bar, each part of the form should be at its own route. Cli
 ### Input Validation
 
 Each step should only allow the user to advance to the next step if a score was provided. Be sure to tell the user in some way that a value must be provided.
+
+if statement
+if input === null no go
+return route path or 
+return alert error
+
+
+
+
+
 
 The `Comments` step does not need to be validated, an empty value is okay.
 
