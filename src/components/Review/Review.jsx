@@ -12,7 +12,7 @@ function Review() {
 
 
   const submitBtn = () => {
-    history.push('/')
+    history.push('/Success')
   }
   return(
     <>

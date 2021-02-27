@@ -7,6 +7,7 @@ import Understanding from '../Understanding/Understanding';
 import Support from '../Support/Support';
 import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
+import Success from '../Success/Success';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 
@@ -55,6 +56,10 @@ function App() {
 
           <Route path='/Review' exact>
             <Review />
+          </Route>
+
+          <Route path='/Success' exact>
+            <Success />
           </Route>
 
 
