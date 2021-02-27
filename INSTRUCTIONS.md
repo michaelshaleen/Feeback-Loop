@@ -20,14 +20,16 @@ npm run client
 ### ADD NEW FEEDBACK
 
 > NOTE: As a baseline requirement, you must use Redux to store your data across views.
-
 Create a multi-part form that allows users to leave feedback for today. 
 There will be 4 views for the form parts.
+
 
 The parts:
 - How are you feeling today?
 ![feeling](wireframes/feeling.png)
 - How well are you understanding the content?
+
+
 ![understanding](wireframes/understanding.png)
 - How well are you being supported?
 ![support](wireframes/supported.png)
@@ -55,6 +57,20 @@ The `Review` step needs to have a submit button which will be clicked on to actu
 When the submit button is clicked, save the submission in the database. The user should see a submission success page. They can then click the button to take a new survey, which needs to reset all the data and go back to the first step.
 
 ![understanding](wireframes/page-five.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## STRETCH GOALS
