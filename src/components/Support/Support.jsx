@@ -26,6 +26,7 @@ function Support() {
     <input
     type="number"
     id='myInput'
+    max='5'
     />
     <button onClick={nextButton}>Next</button>
 

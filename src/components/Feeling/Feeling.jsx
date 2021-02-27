@@ -1,8 +1,11 @@
 import {useState, useEffect} from 'react';
 import { HashRouter as Router, Route, Link, useHistory} from 'react-router-dom';
-import Understanding from '../Understanding/Understanding';
+//import Understanding from '../Understanding/Understanding';
+import { useDispatch } from 'react-redux';
+
 
 function Feeling() {
+  const dispatch = useDispatch();
   const history = useHistory();//use as a variable to .push
   const [input, setInput] = useState();
   let [FeedbackToAdd, setFeedbackToAdd] = useState({
@@ -33,6 +36,10 @@ function Feeling() {
 
   const handleFeeling = (event) => {
     console.log('Feeling', event.target.value);
+    dispatch({
+      type: 'ADD_FEELING',
+      payload: FeedbackToAdd,
+    });
     setFeedbackToAdd({
       ...FeedbackToAdd,
       feeling: event.target.value,
@@ -50,6 +57,7 @@ function Feeling() {
     type='number'
     id='myInput'
     onChange={handleFeeling}
+    max='5'
        />
 
     <button onClick={nextButton}>Next</button>
