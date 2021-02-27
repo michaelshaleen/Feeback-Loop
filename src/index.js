@@ -22,11 +22,29 @@ const understandingReducer = (state = [], action) => {
   return state;
 }
 
+const supportReducer = (state = [], action) => {
+  if(action.type === 'ADD_UNDERSTANDING'){
+    return action.payload
+  }
+  return state;
+}
+
+const commentsReducer = (state = [], action) => {
+  if(action.type === 'ADD_UNDERSTANDING'){
+    return action.payload
+  }
+  return state;
+}
+
+
+
 
 const storeInstance = createStore(
   combineReducers({
     feelingReducer,
     understandingReducer,
+    commentsReducer,
+    supportReducer,
   }),
   // Redux logger!
   applyMiddleware(logger)

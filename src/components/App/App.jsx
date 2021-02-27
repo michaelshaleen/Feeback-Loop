@@ -14,11 +14,6 @@ import { Provider } from 'react-redux';
 
 
 function App() {
-
-
- 
-
-
   // const storeInstance = createStore(
   //   combineReducers({
   //     feelingReducer,

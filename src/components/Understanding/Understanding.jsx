@@ -9,6 +9,13 @@ function Understanding() {
   const history = useHistory();//use as a variable to .push
   const dispatch = useDispatch();
 
+  let [FeedbackToAdd, setFeedbackToAdd] = useState({
+    feelings: '',
+    understanding: '',
+    support: '',
+    comments: '',
+  });
+
   //const = useSelector(store => store.);
 
 

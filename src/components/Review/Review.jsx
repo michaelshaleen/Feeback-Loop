@@ -1,21 +1,17 @@
+import {  useDispatch, useSelector } from 'react-redux';
+
+
+
 function Review() {
 
-
-
-  // const grabFeedback = () => {
-  //   axios.get('/')
-
-
-  //   return(
-
-  //   )
-  // }
+  const feedbackInfo = useSelector(store => store);
+  console.log(feedbackInfo, "feedbackInfo")
 
   return(
     <>
     <h2>Review Your Feedback</h2>
     
-      <p>Feeling: </p>
+      <p>Feeling: {feedbackInfo.feeling}</p>
       <p>Understanding: </p>
       <p>Support: </p>
       <p>Comments: </p>
