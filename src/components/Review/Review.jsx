@@ -2,14 +2,14 @@ function Review() {
 
 
 
-  const grabFeedback = () => {
-    axios.get('/')
+  // const grabFeedback = () => {
+  //   axios.get('/')
 
 
-    return(
+  //   return(
 
-    )
-  }
+  //   )
+  // }
 
   return(
     <>
