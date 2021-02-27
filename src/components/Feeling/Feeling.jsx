@@ -9,9 +9,11 @@ const [input, setInput] = useState();
 
   const nextButton = (input) => {//when clicked to this
     console.log("nextButton");
-    console.log(input);
-    if(input === 1){
+    let x =   document.getElementById("myInput").value; 
+    console.log(x);
+    if(x === ''){
       alert("Add Input Value")
+      console.log("missing input")
     }else{
       console.log("else statement")
       history.push('/Understanding')//bring me to page ___
@@ -27,9 +29,9 @@ const [input, setInput] = useState();
 
 
     <input
-    type="number"
-    onChange={handleInput}
-        />
+    type='number'
+    id='myInput'
+       />
 
     <button onClick={nextButton}>Next</button>
 

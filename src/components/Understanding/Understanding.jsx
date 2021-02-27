@@ -11,7 +11,14 @@ function Understanding() {
 
   const nextButton = () => {//when clicked to this
     console.log("nextButton")
-    history.push('/Support')//bring me to page ___
+    let x = document.getElementById("myInput").value; 
+    if(x === ''){
+      alert("Add Input Value")
+      console.log("missing input")
+    }else{
+      console.log("else statement")
+      history.push('/Support')//bring me to page ___
+    }
 
   }
 
@@ -21,6 +28,7 @@ function Understanding() {
 
     <input
     type="number"
+    id='myInput'
     />
 
     <button onClick={nextButton}>Next</button>
