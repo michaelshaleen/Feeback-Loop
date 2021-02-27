@@ -19,6 +19,10 @@ function Understanding() {
     <>
     <p>understanding</p>
 
+    <input
+    type="number"
+    />
+
     <button onClick={nextButton}>Next</button>
 
     </>

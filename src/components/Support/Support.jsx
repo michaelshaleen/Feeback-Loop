@@ -16,6 +16,10 @@ function Support() {
     <>
 
     <p>Support</p>
+
+    <input
+    type="number"
+    />
     <button onClick={nextButton}>Next</button>
 
 </>

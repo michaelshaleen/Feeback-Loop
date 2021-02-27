@@ -16,6 +16,10 @@ const history = useHistory();
 
     <p>Comments</p>
 
+    <input
+    type="text"
+    />
+
     <button onClick={nextButton}>Next</button>
 </>
   )
