@@ -16,8 +16,17 @@ function Feeling() {
   });
 
 
-  const nextButton = (input) => {//when clicked to this
+  const nextButton = (event) => {//when clicked to this
     console.log("nextButton");
+    dispatch({
+      type: 'ADD_FEELING',
+      payload: FeedbackToAdd,
+    });
+    setFeedbackToAdd({
+      ...FeedbackToAdd,
+      feeling: event.target.value,
+    });
+    
     let x =   document.getElementById("myInput").value; 
     console.log(x);
     if(x === ''){

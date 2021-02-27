@@ -31,7 +31,7 @@ function App() {
         
       <Router>
           <nav>
-              <Link to='/Feeling'>Feeling</Link>
+              <Link to='/Feeling'>Start here!</Link>
           </nav>
       {/* Router, Route, and Links */}
 

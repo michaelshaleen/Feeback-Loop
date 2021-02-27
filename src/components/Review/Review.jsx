@@ -1,4 +1,5 @@
 import {  useDispatch, useSelector } from 'react-redux';
+import { HashRouter as Router, Route, Link, useHistory} from 'react-router-dom';
 
 
 
@@ -6,7 +7,13 @@ function Review() {
 
   const feedbackInfo = useSelector(store => store);
   console.log(feedbackInfo, "feedbackInfo")
+  const history = useHistory();//use as a variable to .push
 
+
+
+  const submitBtn = () => {
+    history.push('/')
+  }
   return(
     <>
     <h2>Review Your Feedback</h2>
@@ -16,7 +23,7 @@ function Review() {
       <p>Support: </p>
       <p>Comments: </p>
   
-    <button>Submit</button>
+    <button onClick={submitBtn}>Submit</button>
     </>
   )
 }

@@ -10,7 +10,8 @@ import { Provider } from 'react-redux';
 
 const feelingReducer = (state = [], action) => {
   if(action.type === 'ADD_FEELING'){
-    return action.payload
+    console.log(action.payload, "payload")
+    return [...state, action.payload];
   }
   return state;
 }

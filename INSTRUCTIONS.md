@@ -14,7 +14,7 @@ npm run server
 Now that the server is running, open a new terminal tab with `cmd + t` and start the react client app.
 
 ```
-npm run client
+npm run client 
 ```
 
 ### ADD NEW FEEDBACK
