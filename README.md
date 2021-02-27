@@ -7,3 +7,12 @@
 Your project description goes here. What problem did you solve? How did you solve it?
 
 Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+
+
+
+
+## TODO
+create component for understanding
+  imports proper shit
+  export default understanding
+  links and routes from feeling to understanding

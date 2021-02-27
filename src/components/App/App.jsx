@@ -3,7 +3,9 @@ import axios from 'axios';
 import './App.css';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import Feeling from '../Feeling/Feeling';
-
+import Understanding from '../Understanding/Understanding';
+import Support from '../Support/Support';
+import Comments from '../Comments/Comments';
 function App() {
 
   return (
@@ -17,12 +19,26 @@ function App() {
           <nav>
               <Link to='/Feeling'>Feeling</Link>
           </nav>
+      {/* Router, Route, and Links */}
 
 
-      {/* TODO place Router, Route, and Links */}
           <Route path='/Feeling' exact>
             <Feeling />
+          </Route>  
+
+          <Route path='/Understanding' exact>
+            <Understanding />
           </Route>
+
+          <Route path='/Support' exact>
+            <Support />
+          </Route>
+
+          <Route path='/Comments' exact>
+            <Comments />
+          </Route>
+
+
       </Router>
     </div>
   );
