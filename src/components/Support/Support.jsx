@@ -26,6 +26,10 @@ function Support() {
     nextButton();
   };
 
+  const backBtn = () => {
+    history.push('/Understanding')
+  }
+
 
   return (
     <>
@@ -43,6 +47,8 @@ function Support() {
         <p>Support: {support}</p>
         <button>Next</button>
       </form>
+      <button onClick={backBtn}>Back</button>
+
     </>
     )
 }

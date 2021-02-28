@@ -9,7 +9,7 @@ import logger from 'redux-logger';
 
 //REDUCERS///////////////////REDUCERS
 const feelingReducer = (state = [], action) => {
-  console.log(action, "action")
+  //console.log(action, "action")
   if(action.type === 'ADD_FEELING'){
     return [...state, action.payload];
   }

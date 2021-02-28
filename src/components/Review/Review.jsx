@@ -32,6 +32,11 @@ function Review() {
     })
     history.push('/Success')
   }
+
+
+  const backBtn = () => {
+    history.push('/Comments')
+  }
   return(
     <>
       <h2>Review Your Feedback</h2>
@@ -42,6 +47,8 @@ function Review() {
         <p>Comments:{feedbackInfo.commentsReducer} </p>
     
       <button onClick={submitBtn}>Submit</button>
+      <button onClick={backBtn}>Back</button>
+
     </>
   )
 }

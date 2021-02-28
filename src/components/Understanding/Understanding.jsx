@@ -26,6 +26,9 @@ function Understanding() {
     nextButton();
   };
 
+  const backBtn = () => {
+    history.push('/Feeling')
+  }
 
 
 
@@ -48,6 +51,8 @@ function Understanding() {
         <p>Understanding: {understanding}</p>
         <button>Next</button>
      </form>
+     <button onClick={backBtn}>Back</button>
+
     </>
     )
 }

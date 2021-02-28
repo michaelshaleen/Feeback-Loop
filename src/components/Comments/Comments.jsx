@@ -17,6 +17,10 @@ function Comments() {
     history.push('/Review') 
   };
 
+  const backBtn = () => {
+    history.push('/Support')
+  }
+
 
   return (
     <>
@@ -29,6 +33,8 @@ function Comments() {
         />
         <button>Next</button>
       </form>
+      <button onClick={backBtn}>Back</button>
+
     </>
     )
 }
