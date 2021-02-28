@@ -7,15 +7,15 @@ const pool = require('../modules/pool');
 feedbackRouter.post('/', (req, res) => {
   const feedback = req.body;
 
-  console.log("ROUTER POST")
+  console.log("ROUTER POST", feedback)
   let sqlQuery = `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
                   VALUES ($1, $2, $3, $4);`;
 
 
   pool.query(sqlQuery,[
-    feedback.feeling,
-    feedback.understanding,
-    feedback.support,
+    Number(feedback.feeling),
+    Number(feedback.understanding),
+    Number(feedback.support),
     feedback.comments
   ])
     .then((result) => {

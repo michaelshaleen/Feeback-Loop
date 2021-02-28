@@ -8,7 +8,7 @@ import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
 //REDUCERS///////////////////REDUCERS
-const feelingReducer = (state = '', action) => {
+const feelingReducer = (state = [], action) => {
   console.log(action, "action")
   if(action.type === 'ADD_FEELING'){
     return [...state, action.payload];
@@ -34,7 +34,7 @@ const supportReducer = (state = [], action) => {
   return state;
 }
 
-const commentsReducer = (state = '', action) => {
+const commentsReducer = (state = [], action) => {
   if(action.type === 'ADD_COMMENTS'){
     console.log(action.payload, "payload")
     return [...state, action.payload];  }

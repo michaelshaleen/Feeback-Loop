@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 function Feeling() {
   const dispatch = useDispatch();
   const history = useHistory();//use as a variable to .push
-  const [feeling, setFeeling] = useState('');
+  const [feeling, setFeeling] = useState(0);
 // grab feelingReducer value from redux state
   const nextButton = (event) => {
     //console.log("nextButton");
