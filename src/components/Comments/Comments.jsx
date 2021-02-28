@@ -1,54 +1,47 @@
-import { HashRouter as Router, Route, Link, useHistory} from 'react-router-dom';
-import { useDispatch } from 'react-redux';
 import {useState, useEffect} from 'react';
+import { HashRouter as Router, Route, Link, useHistory} from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
 
 function Comments() {
-const history = useHistory();
-const dispatch = useDispatch();
-let [FeedbackToAdd, setFeedbackToAdd] = useState({
-  feeling: '',
-  understanding: '',
-  support: '',
-  comments: '',
-});
+  const dispatch = useDispatch();
+  const history = useHistory();//use as a variable to .push
+  const [comments, setComments] = useState('');
+
+  const handleComments = (event) => {
+    event.preventDefault();
+    dispatch({
+      type: 'ADD_FEELING',
+      payload: comments,
+    });
+    history.push('/Review') //console.log(feeling,"feeling")
+  };
 
 
-  const nextButton = () => {//when clicked to this
-    console.log("nextButton")
-    history.push('/Review')//bring me to page ___
-  }
-
- const handleComments = (event) => {
-   console.log("Comments", event.target.value);
-   dispatch({
-     type: 'ADD_COMMENTS',
-     payload: FeedbackToAdd,
-   });
-   setFeedbackToAdd({
-     ...FeedbackToAdd,
-     comments: event.target.value,
-   });
-   console.log(FeedbackToAdd, "object")
-
-   
- }
 
 
-  return(
+  return (
     <>
+    <h1>Any comments you wish to leave?</h1>
 
-    <p>Comments</p>
+    <form onSubmit={handleComments}>
 
-    <input
-    type="text"
-    id='myInput'
-    onChange={handleComments}
-    />
-
-    <button onClick={nextButton}>Next</button>
-</>
-  )
+      <input
+      type='text'
+      value={comments}
+      onChange={(evt) => setComments(event.target.value)}
+      />
+      <button>Next</button>
+      </form>
+    </>
+    )
 }
 
 export default Comments;
+
+
+{/* <input
+    onChange={(event) => handleChange(event)}
+    placeholder='GitHub username'
+    value={editStudent.github_name}
+  /> */}

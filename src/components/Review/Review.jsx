@@ -5,10 +5,15 @@ import { HashRouter as Router, Route, Link, useHistory} from 'react-router-dom';
 
 function Review() {
 
-  const feedbackInfo = useSelector(store => store);
+  const feedbackInfo = useSelector((store) => {
+    return store.feelingReducer.;
+  });
+
+
+
+
   console.log(feedbackInfo, "feedbackInfo")
   const history = useHistory();//use as a variable to .push
-
 
 
   const submitBtn = () => {
@@ -18,7 +23,7 @@ function Review() {
     <>
     <h2>Review Your Feedback</h2>
     
-      <p>Feeling: {feedbackInfo.feeling}</p>
+      <p>Feeling: </p>
       <p>Understanding: </p>
       <p>Support: </p>
       <p>Comments: </p>

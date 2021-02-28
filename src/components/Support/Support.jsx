@@ -1,62 +1,60 @@
-import { HashRouter as Router, Route, Link, useHistory} from 'react-router-dom';
 import {useState, useEffect} from 'react';
-import { useDispatch } from 'react-redux';
-
+import { HashRouter as Router, Route, Link, useHistory} from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
 
 function Support() {
   const dispatch = useDispatch();
-
-
-  const history = useHistory();
-  let [FeedbackToAdd, setFeedbackToAdd] = useState({
-    feeling: '',
-    understanding: '',
-    support: '',
-    comments: '',
-  });
-
-  const nextButton = () => {//when clicked to this
-    console.log("nextButton")
-    let x = document.getElementById("myInput").value; 
+  const history = useHistory();//use as a variable to .push
+  const [support, setSupport] = useState('');
+// grab feelingReducer value from redux state
+  const nextButton = (event) => {
+    let x =   document.getElementById("myInput").value; 
     if(x === ''){
       alert("Add Input Value")
       console.log("missing input")
     }else{
-      console.log("else statement")
       history.push('/Comments')//bring me to page ___
     }
   }
 
-  const handleSupport = () => {
-    console.log("Support", event.target.value);
+  const handleSupport = (event) => {
+    event.preventDefault();
+    //console.log('Feeling', feeling);
     dispatch({
-      type:'ADD_SUPPORT',
-      payload: FeedbackToAdd,
+      type: 'ADD_SUPPORT',
+      payload: support,
     });
-    setFeedbackToAdd({
-      ...FeedbackToAdd,
-      support: event.target.value,
-    });
-    console.log(FeedbackToAdd, "object")
-  }
+   
+    nextButton();
+  };
 
 
-  return(
+  return (
     <>
+    <h1>How well are you being supported</h1>
 
-    <p>Support</p>
+    <form onSubmit={handleSupport}>
 
-    <input
-    type="number"
-    id='myInput'
-    onChange={handleSupport}
-    max='5'
-    />
-    <button onClick={nextButton}>Next</button>
-
-</>
-  )
+      <input
+      type='number'
+      id='myInput'
+      value={support}
+      onChange={(evt) => setSupport(event.target.value)}
+      max='5'
+      />
+      <p>Support: {support}</p>
+      <button>Next</button>
+      </form>
+    </>
+    )
 }
 
 export default Support;
+
+
+{/* <input
+    onChange={(event) => handleChange(event)}
+    placeholder='GitHub username'
+    value={editStudent.github_name}
+  /> */}
