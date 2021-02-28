@@ -11,7 +11,7 @@ function Comments() {
   const handleComments = (event) => {
     event.preventDefault();
     dispatch({
-      type: 'ADD_FEELING',
+      type: 'ADD_COMMENTS',
       payload: comments,
     });
     history.push('/Review') //console.log(feeling,"feeling")
