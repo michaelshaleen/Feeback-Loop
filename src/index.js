@@ -4,10 +4,10 @@ import './index.css';
 import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
-import logger from 'redux-logger';
 import { Provider } from 'react-redux';
+import logger from 'redux-logger';
 
-
+//REDUCERS///////////////////REDUCERS
 const feelingReducer = (state = [], action) => {
   if(action.type === 'ADD_FEELING'){
     console.log(action.payload, "payload")
@@ -18,29 +18,31 @@ const feelingReducer = (state = [], action) => {
 
 const understandingReducer = (state = [], action) => {
   if(action.type === 'ADD_UNDERSTANDING'){
-    return action.payload
+    console.log(action.payload, "payload")
+    return [...state, action.payload];
   }
   return state;
 }
 
 const supportReducer = (state = [], action) => {
-  if(action.type === 'ADD_UNDERSTANDING'){
-    return action.payload
-  }
+  if(action.type === 'ADD_SUPPORT'){
+    console.log(action.payload, "payload")
+    return [...state, action.payload];
+    }
   return state;
 }
 
 const commentsReducer = (state = [], action) => {
-  if(action.type === 'ADD_UNDERSTANDING'){
-    return action.payload
-  }
+  if(action.type === 'ADD_COMMENTS'){
+    console.log(action.payload, "payload")
+    return [...state, action.payload];  }
   return state;
 }
 
 
-
-
-const storeInstance = createStore(
+//////////////////////////////
+//store has access to these reducers
+const store = createStore(
   combineReducers({
     feelingReducer,
     understandingReducer,
@@ -50,9 +52,11 @@ const storeInstance = createStore(
   // Redux logger!
   applyMiddleware(logger)
 ); 
-ReactDOM.render(
-  <Provider store={storeInstance}>
 
+
+
+ReactDOM.render(
+  <Provider store={store}>
     <App />
   </Provider>,
   document.getElementById('root'));

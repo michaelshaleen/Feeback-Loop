@@ -27,3 +27,7 @@ return alert error
 
 
 
+axios post / (create router path to handle??)
+
+post to DB
+use SQL text to do so - INSERT

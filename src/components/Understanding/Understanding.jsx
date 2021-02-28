@@ -22,22 +22,22 @@ function Understanding() {
 
 
   const nextButton = () => {//when clicked to this
-    console.log("nextButton")
+    //console.log("nextButton")
     let x = document.getElementById("myInput").value; 
     if(x === ''){
       alert("Add Input Value")
       console.log("missing input")
     }else{
-      console.log("else statement")
+      //console.log("else statement")
       history.push('/Support')//bring me to page ___
     }
-    console.log(FeedbackToAdd,"object")
+      console.log(FeedbackToAdd,"object")
 
 
   }
 
   const handleUnderstanding = (event) => {
-    console.log('Understanding', event.target.value);
+   // console.log('Understanding', event.target.value);
     dispatch({
       type: 'ADD_UNDERSTANDING',
       payload: FeedbackToAdd
@@ -46,7 +46,7 @@ function Understanding() {
       ...FeedbackToAdd,
       understanding: event.target.value,
     });
-    console.log(FeedbackToAdd,"object")
+    //console.log(FeedbackToAdd,"object")
   };
 
 
