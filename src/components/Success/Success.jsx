@@ -11,12 +11,12 @@ function Success () {
 
   return(
       <>
-      <p>Submission Complete!</p>
-      <button onClick={goHome}>Go Home</button>
-      <img
-        src='https://parkpride.files.wordpress.com/2013/11/success-kid.jpg' 
-        alt="Boy rejoicing in success">
-      </img>
+        <p>Submission Complete!</p>
+        <button onClick={goHome}>Go Home</button>
+        <img
+          src='https://parkpride.files.wordpress.com/2013/11/success-kid.jpg' 
+          alt="Boy rejoicing in success">
+        </img>
       </>
   )
 }

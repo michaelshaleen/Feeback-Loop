@@ -10,18 +10,10 @@ import Review from '../Review/Review';
 import Success from '../Success/Success';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-
-//import logger from 'redux-logger';
+import Home from '../Home/Home';
 
 
 function App() {
-  // const storeInstance = createStore(
-  //   combineReducers({
-  //     feelingReducer,
-  //   }),
-  //   // Redux logger!
-  //   applyMiddleware(logger)
-  // ); 
 
   return (
     <div className='App'>
@@ -31,11 +23,9 @@ function App() {
       </header>
         
       <Router>
-          <nav>
-              <Link to='/Feeling'>Start here!</Link>
-          </nav>
-      {/* Router, Route, and Links */}
-
+          <Route path='/' exact>
+            <Home />
+          </Route>
 
           <Route path='/Feeling' exact>
             <Feeling />
@@ -61,9 +51,6 @@ function App() {
           <Route path='/Success' exact>
             <Success />
           </Route>
-
-
-
       </Router>
     </div>
   );

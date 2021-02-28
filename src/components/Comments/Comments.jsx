@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 function Comments() {
   const dispatch = useDispatch();
-  const history = useHistory();//use as a variable to .push
+  const history = useHistory();
   const [comments, setComments] = useState('');
 
   const handleComments = (event) => {
@@ -14,34 +14,23 @@ function Comments() {
       type: 'ADD_COMMENTS',
       payload: comments,
     });
-    history.push('/Review') //console.log(feeling,"feeling")
+    history.push('/Review') 
   };
-
-
 
 
   return (
     <>
-    <h1>Any comments you wish to leave?</h1>
-
-    <form onSubmit={handleComments}>
-
-      <input
-      type='text'
-      value={comments}
-      onChange={(evt) => setComments(event.target.value)}
-      />
-      <button>Next</button>
+      <h1>Any comments you wish to leave?</h1>
+      <form onSubmit={handleComments}>
+        <input
+          type='text'
+          value={comments}
+          onChange={(evt) => setComments(event.target.value)}
+        />
+        <button>Next</button>
       </form>
     </>
     )
 }
 
 export default Comments;
-
-
-{/* <input
-    onChange={(event) => handleChange(event)}
-    placeholder='GitHub username'
-    value={editStudent.github_name}
-  /> */}

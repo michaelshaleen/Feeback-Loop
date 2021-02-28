@@ -12,8 +12,6 @@ const feelingReducer = (state = [], action) => {
   console.log(action, "action")
   if(action.type === 'ADD_FEELING'){
     return [...state, action.payload];
-    // console.log(action.payload, "payload")
-    // return [...state, action.payload];
   }
   return state;
 }
@@ -51,7 +49,6 @@ const store = createStore(
     supportReducer,
     commentsReducer,
   }),
-  // Redux logger!
   applyMiddleware(logger)
 ); 
 
