@@ -1,5 +1,6 @@
 import {  useDispatch, useSelector } from 'react-redux';
 import { HashRouter as Router, Route, Link, useHistory} from 'react-router-dom';
+import axios from 'axios';
 
 
 
@@ -19,6 +20,23 @@ function Review() {
 
 
   const submitBtn = () => {
+    axios({
+      method: 'POST',
+      url:'/feedback',
+      data: {
+        feeling: feedbackInfo.feelingReducer,
+        understanding: feedbackInfo.understandingReducer,
+        support: feedbackInfo.supportReducer,
+        comments: feedbackInfo.commentsReducer
+
+      }
+    })
+    .then(response => {
+      console.log("created");
+    })
+    .catch(error => {
+      console.log("post failed", error)
+    })
     history.push('/Success')
   }
   return(
