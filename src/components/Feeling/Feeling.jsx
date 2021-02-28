@@ -1,6 +1,5 @@
 import {useState, useEffect} from 'react';
 import { HashRouter as Router, Route, Link, useHistory} from 'react-router-dom';
-//import Understanding from '../Understanding/Understanding';
 import { useDispatch, useSelector } from 'react-redux';
 
 
@@ -9,7 +8,7 @@ function Feeling() {
   const history = useHistory();//use as a variable to .push
   const [feeling, setFeeling] = useState('');
 // grab feelingReducer value from redux state
-  const nextButton = (event) => {//when clicked to this
+  const nextButton = (event) => {
     //console.log("nextButton");
     let x =   document.getElementById("myInput").value; 
     //console.log(x);

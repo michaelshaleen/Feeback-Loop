@@ -1,29 +1,17 @@
-import { HashRouter as Router, Route, Link, useHistory} from 'react-router-dom';
 import {useState, useEffect} from 'react';
-import {  useDispatch, useSelector } from 'react-redux';
-
-
+import { HashRouter as Router, Route, Link, useHistory} from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
 
 function Understanding() {
-  const history = useHistory();//use as a variable to .push
   const dispatch = useDispatch();
-
-  let [FeedbackToAdd, setFeedbackToAdd] = useState({
-    feelings: '',
-    understanding: '',
-    support: '',
-    comments: '',
-  });
-
-  //const = useSelector(store => store.);
-
-
-
-
-  const nextButton = () => {//when clicked to this
-    //console.log("nextButton")
-    let x = document.getElementById("myInput").value; 
+  const history = useHistory();//use as a variable to .push
+  const [understanding, setUnderstanding] = useState('');
+// grab feelingReducer value from redux state
+  const nextButton = (event) => {
+    //console.log("nextButton");
+    let x =   document.getElementById("myInput").value; 
+    //console.log(x);
     if(x === ''){
       alert("Add Input Value")
       console.log("missing input")
@@ -31,44 +19,54 @@ function Understanding() {
       //console.log("else statement")
       history.push('/Support')//bring me to page ___
     }
-      console.log(FeedbackToAdd,"object")
-
-
+    //console.log(feeling,"feeling")
   }
 
   const handleUnderstanding = (event) => {
-   // console.log('Understanding', event.target.value);
+    event.preventDefault();
+    //console.log('Feeling', feeling);
     dispatch({
       type: 'ADD_UNDERSTANDING',
-      payload: FeedbackToAdd
-    })
-    setFeedbackToAdd({
-      ...FeedbackToAdd,
-      understanding: event.target.value,
+      payload: understanding,
     });
-    //console.log(FeedbackToAdd,"object")
+    // setFeedbackToAdd({
+    //   ...feeling,
+    //   feeling: event.target.value,
+    // });
+    nextButton();
+ //console.log(feeling,"feeling")
   };
 
 
 
 
-  return(
+
+  return (
     <>
-    <p>understanding</p>
+    <h1>How well do you understand the content</h1>
 
-    <input
-    type="number"
-    id='myInput'
-    onChange={handleUnderstanding}
-    max='5'
-    />
+    <form onSubmit={handleUnderstanding}>
 
-    <button onClick={nextButton}>Next</button>
-
+      <input
+      type='number'
+      id='myInput'
+      value={understanding}
+      onChange={(evt) => setUnderstanding(event.target.value)}
+      //onChange={handleFeeling}
+      max='5'
+      />
+      <p>Understanding: {understanding}</p>
+      <button>Next</button>
+      </form>
     </>
-
-  )
+    )
 }
 
-
 export default Understanding;
+
+
+{/* <input
+    onChange={(event) => handleChange(event)}
+    placeholder='GitHub username'
+    value={editStudent.github_name}
+  /> */}
