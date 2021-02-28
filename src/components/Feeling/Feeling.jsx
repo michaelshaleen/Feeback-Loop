@@ -7,11 +7,8 @@ import { useDispatch, useSelector } from 'react-redux';
 function Feeling() {
   const dispatch = useDispatch();
   const history = useHistory();//use as a variable to .push
-  const feeling = useSelector((store) => {
-    return store.feelingReducer;
-});
+  const [feeling, setFeeling] = useState('');
 // grab feelingReducer value from redux state
-
   const nextButton = (event) => {//when clicked to this
     //console.log("nextButton");
     let x =   document.getElementById("myInput").value; 
@@ -27,8 +24,8 @@ function Feeling() {
   }
 
   const handleFeeling = (event) => {
-    console.log('Feeling', feeling);
-    console.log(event, 'HERE')
+    event.preventDefault();
+    //console.log('Feeling', feeling);
     dispatch({
       type: 'ADD_FEELING',
       payload: feeling,
@@ -38,20 +35,30 @@ function Feeling() {
     //   feeling: event.target.value,
     // });
     nextButton();
- console.log(feeling,"feeling")
+ //console.log(feeling,"feeling")
   };
+
+
+
+
 
   return (
     <>
     <h1>How are you feeling today?</h1>
+
+    <form onSubmit={handleFeeling}>
+
       <input
       type='number'
       id='myInput'
+      value={feeling}
+      onChange={(evt) => setFeeling(event.target.value)}
       //onChange={handleFeeling}
       max='5'
       />
-
-      <button onClick={handleFeeling}>Next</button>
+      <p>Feeling: {feeling}</p>
+      <button>Next</button>
+      </form>
     </>
     )
 }

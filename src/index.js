@@ -8,10 +8,12 @@ import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
 //REDUCERS///////////////////REDUCERS
-const feelingReducer = (state = [], action) => {
+const feelingReducer = (state = 0, action) => {
+  console.log(action, "action")
   if(action.type === 'ADD_FEELING'){
-    console.log(action.payload, "payload")
-    return [...state, action.payload];
+    return state + 1;
+    // console.log(action.payload, "payload")
+    // return [...state, action.payload];
   }
   return state;
 }
