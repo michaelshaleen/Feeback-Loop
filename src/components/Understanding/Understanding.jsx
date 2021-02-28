@@ -54,6 +54,8 @@ function Understanding() {
       onChange={(evt) => setUnderstanding(event.target.value)}
       //onChange={handleFeeling}
       max='5'
+      min='1'
+      style={{width:'100px'}}
       />
       <p>Understanding: {understanding}</p>
       <button>Next</button>

@@ -42,7 +42,9 @@ function Support() {
       value={support}
       onChange={(evt) => setSupport(event.target.value)}
       max='5'
-      />
+      min='1'
+      style={{width:'100px'}}
+       />
       <p>Support: {support}</p>
       <button>Next</button>
       </form>

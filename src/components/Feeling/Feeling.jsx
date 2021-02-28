@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 function Feeling() {
   const dispatch = useDispatch();
   const history = useHistory();//use as a variable to .push
-  const [feeling, setFeeling] = useState(0);
+  const [feeling, setFeeling] = useState('');
 // grab feelingReducer value from redux state
   const nextButton = (event) => {
     //console.log("nextButton");
@@ -54,6 +54,10 @@ function Feeling() {
       onChange={(evt) => setFeeling(event.target.value)}
       //onChange={handleFeeling}
       max='5'
+      min='1'
+      style={{width:'100px'}}
+
+
       />
       <p>Feeling: {feeling}</p>
       <button>Next</button>
