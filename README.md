@@ -1,33 +1,16 @@
 # Project Name
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
-
+Feedback Portal
 ## Description
+With feedback our team will be able to understand how effective our lectures are and how we may improve moving forward. Users will have options to move forward and back via click buttons, while providing feedback ratings and comments, all this data will be available in our database once the user has submitted all the info.
 
-Your project description goes here. What problem did you solve? How did you solve it?
+
+
+## INSTALLATION
+  -npm run server
+  -npm run client
+
+
 
 Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
 
-
-
-
-## TODO
-create component for understanding
-  imports proper shit
-  export default understanding
-  links and routes from feeling to understanding
-
-
-
-  if statement
-if input === null no go
-return route path or 
-return alert error
-
-
-
-
-axios post / (create router path to handle??)
-
-post to DB
-use SQL text to do so - INSERT

@@ -79,7 +79,9 @@ Allow the user to go back to a previous step and change their score. You still n
 
 
 ### STYLING
-Improve the styling of the app using Material-UI. This might include cards, snackbars, buttons, a nav bar, icons, and/or a theme. 
+Improve the styling of the app using Material-UI. This might include cards, snackbars, buttons, a nav bar, icons, and/or a theme.
+
+what is this?
 
 ### ADMIN SECTION
 

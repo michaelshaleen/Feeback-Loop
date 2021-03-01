@@ -17,7 +17,7 @@ function Review() {
     axios({
       method: 'POST',
       url:'/feedback',
-      data: {
+      data: {//req.body
         feeling: feedbackInfo.feelingReducer,
         understanding: feedbackInfo.understandingReducer,
         support: feedbackInfo.supportReducer,
